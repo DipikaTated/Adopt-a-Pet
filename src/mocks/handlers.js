@@ -70,8 +70,17 @@ export const handlers = [
   }),
   rest.get('/animals/:id', (req, res, ctx) => {
     const { id } = req.params;
-    const communityPet = communityPets.find((animal) => animal.id === id);
-    let response = details[id] ? applyPetOverride(details[id]) : (communityPet ? { ...communityPet, demoOnly: true } : undefined);
+    const listedPet = animals.animals.find((animal) => String(animal.id) === String(id));
+    const communityPet = communityPets.find((animal) => String(animal.id) === String(id));
+    // Use the detailed record when available; otherwise fall back to the same
+    // pet record used by the listing so every displayed pet has a detail page.
+    let response = details[id]
+      ? applyPetOverride(details[id])
+      : listedPet
+        ? applyPetOverride(listedPet)
+        : communityPet
+          ? { ...communityPet, demoOnly: true }
+          : undefined;
 
     if (!response) {
       return res(ctx.status(404));
