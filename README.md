@@ -1,56 +1,90 @@
-# Adopt a Pet - Web App
-> A React app to practice React Router v6
+# Pawfect Home — Adopt-a-Pet
 
-Here is a working live demo [https://adopt-a-pet_simonapiz.surge.sh/](https://adopt-a-pet_simonapiz.surge.sh/)
+A responsive pet-adoption website built with React. Pawfect Home helps visitors explore pets, search for a possible companion, view pet profiles, and learn more about the adoption process.
 
-<img width="1000px" src="https://user-images.githubusercontent.com/91121660/235917882-0f645705-805f-4dcb-a405-490e2e9e5c0e.png" alt="preview" title="preview"/>
+🌐 **Live website:** https://adopt-a-pet-xi.vercel.app/  
+💻 **GitHub repository:** https://github.com/DipikaTated/Adopt-a-Pet
 
-## Table of contents
-* [About this project](#about-this-project)
-* [Objective](#objective)
-* [Technologies](#technologies)
-* [Setup](#setup)
+## About the project
 
-## About this project
+Pawfect Home is a front-end web project focused on creating a friendly and simple pet-browsing experience. Visitors can explore different animal categories, search the pet directory, and open individual pet profiles.
 
-In this project, I practice using React Router to add client-side routing to a React Application. 
-I building a pet adoption website that allows users to view all the animals of a particular species and view the profiles of specific animals.
+The project uses mock data and Mock Service Worker (MSW) to simulate API responses. Some profiles are demonstration profiles, so the website should be treated as a project demo rather than a live shelter listing service.
 
-- Currently, the app renders a `HomePage`component that fetches and displays all adoptable pets.
-    - **src/pages/home/index.js**
-- We have also built a `PetDetailsPage` to display the details for a particular pet.
-    - **src/pages/detail/index.js**
+## Features
 
-> Use this database for mock data [Urgent Need for Pet Adoption - Find Dogs & Cats & More | Petfinder](https://www.petfinder.com/)
+- Browse pets from the home page.
+- Explore pets by animal category.
+- Search pets by name.
+- Filter search results by animal type, age, and breed.
+- View individual pet profiles and available details.
+- Open the adoption application page.
+- Visit the About and Contact pages.
+- Navigate between pages using React Router.
+- Display a helpful page when a pet profile cannot be found.
 
-## Objective
+## Technologies used
 
-The objective is to **add client-side routing to the application** using React Router so that:
+- **React 18** — building the user interface.
+- **JavaScript** — application logic and interactions.
+- **React Router 6** — client-side navigation.
+- **Mock Service Worker (MSW)** — simulating API requests and responses.
+- **HTML and CSS** — page structure and styling.
+- **npm** — package management and project scripts.
 
-- The `HomePage`component responds to the browser’s current URL by displaying only pets of the species the user wishes to view.
-- The `PetDetailsPage`page displays when the browser’s current URL includes a specific pet’s `id`
-    - It displays data for the correct pet based on the `id`in the URL parameters’ values.
-- When the user searches for a pet in the search bar, they are redirected to the `SearchPage`, which uses the query parameter called `name`to filter pets by name.
-- When a user clicks a pet whose details are not available, they are redirected to a `PetNotFoundPage`
-- From the `PetNotFound`page, users can click “**Go Home**” button that will take them to the root path page.
+## Run the project locally
 
+Make sure [Node.js](https://nodejs.org/) and npm are installed.
 
-## Technologies
-- React 18
-- React Router 6
-- uses Mock Service Worker (MSW) to replicate the functionality of an external API.
+1. Clone the repository:
 
-## Setup
-To run this project, install it locally using npm:
+   ```bash
+   git clone https://github.com/DipikaTated/Adopt-a-Pet.git
+   ```
+
+2. Open the project folder:
+
+   ```bash
+   cd Adopt-a-Pet
+   ```
+
+3. Install the dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm start
+   ```
+
+The app will usually open at http://localhost:3000.
+
+## Available scripts
+
+| Command | Description |
+| --- | --- |
+| `npm start` | Runs the app in development mode. |
+| `npm run build` | Creates an optimized production build. |
+| `npm test` | Runs the test runner. |
+
+## Project structure
 
 ```
-$ cd ../[directory]
-$ npm install
-$ npm start
+src/
+├── components/   Reusable interface components
+├── pages/        Home, search, pet details, and other pages
+├── api/          Functions used to request pet data
+├── mocks/        Mock API handlers and sample data
+└── App.js        Application routes
 ```
-
-## License
-MIT
 
 ## Acknowledgements
-This project comes from the [Codecademy's Front-End Engineer](https://join.codecademy.com/learn/paths/front-end-engineer-career-path-b/) course.
+
+This project was originally inspired by a Codecademy Front-End Engineer learning project and has been further customized and developed.
+
+---
+
+Made with ♡ for pets everywhere.
